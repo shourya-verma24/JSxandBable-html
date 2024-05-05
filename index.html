@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root" style="font-family: 'Courier New', Courier, monospace;"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        let root = document.getElementById("root")
+      // Your JSX code here\
+      //this function will through the alert as soon as buutton will be clicked
+      function hello(){
+        alert("Hello Sir")
+      }
+      let fregment = (
+      <>
+        <p style={{textAlign :"center",fontSize:"30px"}}>React is a Javascript Library.</p>
+        <div style={{border:"2px solid wheat", boxShadow:"0px 5px 10px Grey",textAlign:"center",padding: "2px"}}> 
+
+            <p>Click the Below element to alert "Hello"</p>
+        <button onClick={hello} style={{boxShadow: "1px 2px 3px gray",margin:"2px",borderRadius:"18px",fontfamily: "'Courier New', Courier, monospace"}}>Alert Hello</button>
+        </div>
+      </>)
+    //always use double bracket for styling in line 21.
+    // i faced the issue while doing styling but i got it . the only thing we need to do id add {{}} two curly brackets and after that saperate 
+    // everything with comma , also always use the camelCase to peroperties.
+    //also while rendering write ReactDOM not ReactDom. 
+      ReactDOM.createRoot(root).render(fregment)
+      //ReactDOM.createRoot(root).render(element)
+    </script>
+  </body>
+</html>
